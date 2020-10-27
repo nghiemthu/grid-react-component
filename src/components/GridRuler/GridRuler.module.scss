@@ -1,0 +1,25 @@
+$spacing: (
+  "sm": 8px,
+  "md": 16px,
+  "lg": 24px,
+);
+
+.GridRuler {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  position: absolute;
+
+  width: 100%;
+  height: 100vh;
+
+  &_item {
+    background-color: rgba($color: #000, $alpha: 0.1);
+  }
+
+  @each $name, $value in $spacing {
+    &_spacing_#{$name} {
+      gap: $value * 2;
+    }
+  }
+}
